@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>User Card Management Page</title>
+</head>
+<body th:style="'background: url(/img/bus.jpg) no-repeat center center fixed;'">
+<div align="center">
+	<h1> User Card List</h1>
+	<table border="1">
+		<thead>
+		<tr>
+			<th> Card Number</th>
+			<th> Card Name</th>
+			<th> Card Description</th>
+			<th> Edit</th>
+			<th> Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="userCard : ${listOfUserCard}">
+			<td th:text="${userCard.id}"></td>
+			<td th:text="${userCard.name}"></td>
+			<td th:text="${userCard.description}"></td>
+			<td><a th:href="@{/userCard/updateform/{id}(id=${userCard.id})}">Edit</a></td>
+			<td><a th:href="@{/userCard/delete/{id}(id=${userCard.id})}">Delete</a></td>
+		</tr>
+
+		</tbody>
+	</table>
+</div>
+	<div align="center">
+		<a th:href="@{/bus/form}"><h4> Add New Details</h4></a>
+	</div>
+
+</body>
+</html>

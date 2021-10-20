@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>UserIdentificationtype Management Page</title>
+</head>
+<body th:style="'background: url(/img/card.jpg) no-repeat center center fixed;'">
+<div align="center">
+	<h1> User Identificationtype List</h1>
+	<table border="1">
+		<thead>
+		<tr>
+			<th> User Identificationtype Number</th>
+			<th> Issue Date</th>
+			<th> Card Color</th>
+			<th> Balance</th>
+			<th> Edit</th>
+			<th> Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="card : ${listOfCards}">
+			<td th:text="${userIdentificationtype.id}"></td>
+			<td th:text="${userIdentificationtype.issueDate}"></td>
+			<td th:text="${userIdentificationtype.cardColor}"></td>
+			<td th:text="${userIdentificationtype.balance}"></td>
+			<td><a th:href="@{/userIdentificationtype/updateform/{id}(id=${userIdentificationtype.id})}">Edit</a></td>
+			<td><a th:href="@{/userIdentificationtype/delete/{id}(id=${userIdentificationtype.id})}">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div align="center">
+	<a th:href="@{/userIdentificationtype/form}"><h4> Add New Details</h4></a>
+</div>
+</body>
+</html>
