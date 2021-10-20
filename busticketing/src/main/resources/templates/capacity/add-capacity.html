@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CPUT Project </title>
+</head>
+<body>
+<h1>Add Capacity Form</h1>
+<br>
+<hr>
+<div >
+	<form th:action="@{/capacity/save}" th:object="${capacity}" method="post">
+		<table>
+			<tr><td>Name : </td><td><input type="text" th:field="*{name}"/></td></tr>
+			<tr><td> Description : </td><td> <input type="text" th:field="*{description}"/></td></tr>
+			<tr><td> </td><td> <input type="submit" value="Add New Capacity"/></td></tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>

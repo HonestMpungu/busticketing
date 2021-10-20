@@ -1,0 +1,14 @@
+#Files and folders to be ignored by Git.
+target/
+out/
+
+#Tntellij specifics
+/.idea/
+*.iml
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+

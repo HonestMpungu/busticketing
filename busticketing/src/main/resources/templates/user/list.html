@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>user Management Page</title>
+</head>
+<body th:style="'background: url(/img/ticket.jpg) no-repeat;foreground:orange; '">
+<div align="center">
+<h1> Users List</h1>
+	<table border="1">
+		<thead>
+		<tr>
+			<th> User ID</th>
+			<th> User First Name</th>
+			<th> User Last Name</th>
+			<th> User Phone Number</th>
+			<th> User Email Address</th>
+			<th> User Password</th>
+			<th> Edit</th>
+			<th> Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="user : ${listOfUsers}">
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.firstName}"></td>
+			<td th:text="${user.lastName}"></td>
+			<td th:text="${user.phone}"></td>
+			<td th:text="${user.email}"></td>
+			<td th:password="${user.password}"></td>
+			<td><a th:href="@{/user/updateform/{id}(id=${user.id})}">Edit</a></td>
+			<td><a th:href="@{/user/delete/{id}(id=${user.id})}">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div align="center">
+	<a th:href="@{/user/form}"><h4> Add New Details</h4></a>
+</div>
+</body>
+</html>

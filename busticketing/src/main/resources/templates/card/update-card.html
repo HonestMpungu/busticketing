@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CPUT Project </title>
+</head>
+<body>
+<h1>Update the Card details</h1>
+<br>
+<hr>
+
+<form th:action="@{/card/updater}" th:object="${card}" method="post">
+	<p><input type="hidden" id="id" th:field="*{id}"></p>
+	<p> Card Issue Date : <input type="text" th:field="*{issueDate}"/></p>
+	<p> Card Balance : <input type="text" th:field="*{balance}"/></p>
+	<p> Card Color : <input type="text" th:field="*{cardColor}"/></p>
+	<p> <input type="submit" value="Update"/></p>
+</form>
+</body>
+</html>

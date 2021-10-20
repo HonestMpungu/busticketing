@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Bus Management Page</title>
+</head>
+<body th:style="'background: url(/img/bus.jpg) no-repeat center center fixed;'">
+<div align="center">
+	<h1> Buses List</h1>
+	<table border="1">
+		<thead>
+		<tr>
+			<th> Bus Number</th>
+			<th> Bus Name</th>
+			<th> Bus Description</th>
+			<th> Edit</th>
+			<th> Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="bus : ${listOfBuses}">
+			<td th:text="${bus.id}"></td>
+			<td th:text="${bus.name}"></td>
+			<td th:text="${bus.description}"></td>
+			<td><a th:href="@{/bus/updateform/{id}(id=${bus.id})}">Edit</a></td>
+			<td><a th:href="@{/bus/delete/{id}(id=${bus.id})}">Delete</a></td>
+		</tr>
+
+		</tbody>
+	</table>
+</div>
+	<div align="center">
+		<a th:href="@{/bus/form}"><h4> Add New Details</h4></a>
+	</div>
+
+</body>
+</html>

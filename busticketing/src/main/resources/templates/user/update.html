@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CPUT Project </title>
+</head>
+<body>
+<h1>Update the user</h1>
+<br>
+<hr>
+
+<form th:action="@{/user/updater}" th:object="${user}" method="post">
+	<p><input type="hidden" id="id" th:field="*{id}"></p>
+	<p> First name : <input type="text" th:field="*{firstName}"/></p>
+	<p> Last name : <input type="text" th:field="*{lastName}"/></p>
+	<p> Phone : <input type="text" th:field="*{phone}"/></p>
+	<p> Email : <input type="text" th:field="*{email}"/></p>
+	<p> Password : <input type="password" th:field="*{password}"/></p>
+	<p> <input type="submit" value="Update"/></p>
+</form>
+</body>
+</html>
