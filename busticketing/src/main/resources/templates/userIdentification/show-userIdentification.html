@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>User ID Management Page</title>
+</head>
+<body th:style="'background: url(/img/metro-bus-route.jpg) no-repeat center center fixed;'">
+<div align="center">
+	<h1> User ID List</h1>
+	<table border="1">
+		<thead>
+		<tr>
+
+			<th> Route Name</th>
+			<th> Route Description</th>
+			<th> Edit</th>
+			<th> Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="userIdentification : ${listOfUsers}">
+			<td th:text="${userIdentification.id}"></td>
+			<td th:text="${userIdentification.description}"></td>
+			<td><a th:href="@{/userIdentification/updateform/{id}(id=${userIdentification.id})}">Edit</a></td>
+			<td><a th:href="@{/userIdentification/delete/{id}(id=${userIdentification.id})}">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div align="center">
+	<a th:href="@{/userIdentification/form}"><h4> Add New Details</h4></a>
+</div>
+</body>
+</html>

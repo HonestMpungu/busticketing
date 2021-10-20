@@ -20,7 +20,7 @@ import java.util.Optional;
  * Group: PT
  */
 @Controller
-@RequestMapping(path="/busRoute")
+@RequestMapping(path= "/templates/busRoute")
 public class BusRouteController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class BusRouteController {
     public String viewBusRoutePage( Model model){
         List<BusRoute> listBusRoute = busRouteService.getAllBusRoutes();
         model.addAttribute( "listOfBusRoute" , listBusRoute);
-        return "busRoute/show-busRoute";
+        return "templates/busRoute/show-busRoute";
     }
 
     @PostMapping("/save")
@@ -43,14 +43,14 @@ public class BusRouteController {
     //form to be called first when wanting to add a new BusRoute
     @GetMapping("/form")
     public String displayAddBusRouteForm(BusRoute busRoute) {
-        return "busRoute/add-busRoute";
+        return "templates/busRoute/add-busRoute";
     }
 
     @GetMapping("/updateform/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         Optional<BusRoute> busRoutes = busRouteService.getByID(id);
         model.addAttribute("BusRoute", busRoutes.orElse( null ));
-        return "busRoute/update-busRoute";
+        return "templates/busRoute/update-busRoute";
     }
 
     @PostMapping("/updater")
