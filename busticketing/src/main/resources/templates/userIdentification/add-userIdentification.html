@@ -11,9 +11,9 @@
 
 <form th:action="@{/userIdentification/save}" th:object="${userIdentification}" method="post">
 	<table>
-	<tr><td>Issue Date :</td><td> <input type="text" th:field="*{issueDate}"/></td></tr>
-	<tr><td> Balance : </td><td><input type="text" th:field="*{balance}"/></td></tr>
-	<tr><td> Card Color : </td><td> <input type="text" th:field="*{cardColor}"/></td></tr>
+		<tr><td>Name : </td><td><input type="text" th:field="*{name}"/></td></tr>
+		<tr><td> Description : </td><td> <input type="text" th:field="*{description}"/></td></tr>
+		<tr><td> </td><td> <input type="submit" value="Add New User ID "/></td></tr>
 	<tr><td></td><td> <input type="submit" value="Add New User Identification"/></td></tr>
 	</table>
 </form>
