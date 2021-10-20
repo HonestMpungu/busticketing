@@ -3,6 +3,7 @@
   <component name="JpbDataSourceConfig">
     <data-sources>
       <data-source id="58a523ef-c249-48bc-906e-77a656f31864" name="busticketing" url="jdbc:mysql://localhost:3306/munya?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="05951dab-55c4-404c-b526-d3ec4e1994e6" name="users" url="jdbc:mysql://localhost:3306/users" driverClass="com.mysql.jdbc.Driver" />
     </data-sources>
   </component>
 </project>

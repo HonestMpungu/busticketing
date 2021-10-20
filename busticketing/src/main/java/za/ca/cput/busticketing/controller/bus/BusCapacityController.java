@@ -23,7 +23,6 @@ Date : 27 June 2021
 @RequestMapping(path="/buscapacity")
 public class BusCapacityController {
 
-
     @Autowired
     private  BusCapacityService busCapacityService;
 
