@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>CardType Management Page</title>
+</head>
+<body th:style="'background: url(/img/metro-bus-route.jpg) no-repeat center center fixed;'">
+<div align="center">
+	<h1> CardType List</h1>
+	<table border="1">
+		<thead>
+		<tr>
+			<th>  Number</th>
+			<th> CardType Name</th>
+			<th>  Description</th>
+			<th> Edit</th>
+			<th> Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="cardType : ${listOfCards}">
+			<td th:text="${cardType.id}"></td>
+			<td th:text="${cardType.name}"></td>
+			<td th:text="${cardType.description}"></td>
+			<td><a th:href="@{/cardType/updateform/{id}(id=${cardType.id})}">Edit</a></td>
+			<td><a th:href="@{/cardType/delete/{id}(id=${cardType.id})}">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div align="center">
+	<a th:href="@{/cardType/form}"><h4> Add New Details</h4></a>
+</div>
+</body>
+</html>
