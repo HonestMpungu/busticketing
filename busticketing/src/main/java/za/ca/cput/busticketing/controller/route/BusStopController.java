@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import za.ca.cput.busticketing.entity.route.BusRoute;
 import za.ca.cput.busticketing.entity.route.BusStop;
-import za.ca.cput.busticketing.service.route.BusRouteService;
 import za.ca.cput.busticketing.service.route.BusStopService;
 
 import java.util.List;
@@ -45,7 +44,7 @@ public class BusStopController {
     //form to be called first when wanting to add a new BusRoute
     @GetMapping("/form")
     public String displayAddBusRouteForm(BusRoute busRoute) {
-        return "busRoute/add-busRoute";
+        return "templates/busRoute/add-busRoute";
     }
 
     @GetMapping("/updateform/{id}")
