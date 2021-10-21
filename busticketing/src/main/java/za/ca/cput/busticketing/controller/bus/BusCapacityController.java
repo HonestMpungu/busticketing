@@ -24,7 +24,6 @@ Author : Asanda Mabaso - 205049990
 @RequestMapping(path="/buscapacity")
 public class BusCapacityController {
 
-
     @Autowired
     private  BusCapacityService busCapacityService;
 

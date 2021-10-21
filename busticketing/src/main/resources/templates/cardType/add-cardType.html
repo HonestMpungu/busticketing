@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CPUT Project </title>
+</head>
+<body>
+<h1>Add CardType Form</h1>
+<br>
+<hr>
+
+<form th:action="@{/cardType/save}" th:object="${cardType}" method="post">
+	<table>
+		<tr><td>CardType Name : </td><td><input type="text" th:field="*{name}"/></td></tr>
+		<tr><td> Description : </td><td> <input type="text" th:field="*{description}"/></td></tr>
+		<tr><td> </td><td> <input type="submit" value="Add New CardType"/></td></tr>
+	</table>
+</form>
+</body>
+</html>
