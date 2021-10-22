@@ -1,5 +1,4 @@
 package za.ca.cput.busticketing.service.card;
-;
 import za.ca.cput.busticketing.entity.card.CardType;
 
 import java.util.List;

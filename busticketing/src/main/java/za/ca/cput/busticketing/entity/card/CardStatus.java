@@ -44,43 +44,6 @@ public class CardStatus {
     {
         this.description = description;
     }
-    private CardStatus() {
-    }
-    private CardStatus(Builder builder) {
-        this.id = builder.id;
-        this.name = builder.name;
-        this.description = builder.description;
-    }
-    public static class Builder {
-        private Integer id;
-        private String name;
-        private String description;
 
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setDesc(String desc) {
-            this.description = description;
-            return this;
-        }
-
-        public Builder copy(CardStatus cardStatus) {
-            this.id = cardStatus.id;
-            this.name = cardStatus.name;
-            this.description = cardStatus.description;
-            return this;
-        }
-
-        public CardStatus build() {
-            return new CardStatus(this);
-        }
-    }
 
 }

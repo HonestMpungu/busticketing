@@ -1,7 +1,6 @@
 package za.ca.cput.busticketing.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +16,8 @@ import java.util.Optional;
  * Group:Part Time
  * UserCardController class
  */
-@Controller
-@RequestMapping(path="/userCard")
+@RestController
+@RequestMapping("/userCard")
 public class UserCardController {
     @Autowired
     private UserCardService userCardService;
@@ -28,7 +27,7 @@ public class UserCardController {
     public String viewUserCardsPage( Model model){
         List<UserCard> listUserCards = userCardService.getAllUserCards();
         model.addAttribute( "listOfUserCards" , listUserCards);
-        return "userCard/show-userCard";
+        return "userCard/list";
     }
 
     @PostMapping("/save")
@@ -40,14 +39,14 @@ public class UserCardController {
     //form to be called first when wanting to add a new userCard
     @GetMapping("/form")
     public String displayAddUserCardForm(UserCard userCard) {
-        return "userCard/add-userCard";
+        return "userCard/signup";
     }
 
     @GetMapping("/updateform/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         Optional<UserCard> userCard = userCardService.getByID(id);
         model.addAttribute("userCard", userCard.orElse( null ));
-        return "userCard/update-userCard";
+        return "userCard/update";
     }
 
     @PostMapping("/updater")
