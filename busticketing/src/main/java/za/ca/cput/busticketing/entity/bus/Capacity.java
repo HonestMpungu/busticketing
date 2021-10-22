@@ -5,10 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 /*
-Capacity.java
-Entity for capacity
+
 Author : Asanda Mabaso - 205049990
-Date : 27 June 2021
+
  */
 @Entity
 public class Capacity {

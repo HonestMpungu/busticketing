@@ -5,9 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 /**
- * Honest Mpungu
- * Part -Time Class
- * Student Number 215072081
+ * @author Honest Mpungu
+ * Student No:215072081
+ * Group:Part Time
+ * 20/10/2021
  */
 @Entity
 public class CardType {
