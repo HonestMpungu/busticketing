@@ -49,8 +49,8 @@ public class BusCapacityController {
 
     @GetMapping("/updateform/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        Optional<BusCapacity> buscapacity = busCapacityService.getByID(id);
-        model.addAttribute("buscapacity", buscapacity.orElse( null ));
+        Optional<BusCapacity> buscapacitys = busCapacityService.getByID(id);
+        model.addAttribute("buscapacity", buscapacitys.orElse( null ));
         return "buscapacity/update-buscapacity";
     }
 
@@ -63,9 +63,9 @@ public class BusCapacityController {
 
     @GetMapping("/delete/{id}")
     public String deleteBusCapacity(@PathVariable("id") Integer id, Model model) {
-        Optional<BusCapacity> buscapacity = busCapacityService.getByID( id );
-        if(buscapacity.isPresent())
-            busCapacityService.delete(buscapacity.get().getId());
+        Optional<BusCapacity> buscapacitys = busCapacityService.getByID( id );
+        if(buscapacitys.isPresent())
+            busCapacityService.delete(buscapacitys.get().getId());
         return "redirect:/buscapacity/all";
     }
 

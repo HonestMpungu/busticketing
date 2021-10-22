@@ -20,8 +20,13 @@ import java.util.Optional;
 @Service
 public class CardStatusServiceImpl implements CardStatusService {
 
-    @Autowired
-    private CardStatusRepository cardStatusRepository;
+private CardStatusRepository cardStatusRepository;
+
+	@Autowired
+	public CardStatusServiceImpl(CardStatusRepository cardStatusRepository) {
+		this.cardStatusRepository = cardStatusRepository;
+	}
+
 
     @Override
     public List<CardStatus> getAllCardStatus()

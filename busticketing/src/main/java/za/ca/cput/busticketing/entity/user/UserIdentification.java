@@ -41,4 +41,13 @@ public class UserIdentification {
     {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "UserIdentification{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

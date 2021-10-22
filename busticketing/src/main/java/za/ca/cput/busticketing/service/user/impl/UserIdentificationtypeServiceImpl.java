@@ -18,8 +18,12 @@ import java.util.Optional;
 @Service
 public class UserIdentificationtypeServiceImpl implements UserIdentificationtypeService {
 
-    @Autowired
-    private UserIdentificationtypeRepository userIdentificationtypeRepository;
+private UserIdentificationtypeRepository userIdentificationtypeRepository;
+
+   @Autowired
+    public UserIdentificationtypeServiceImpl(UserIdentificationtypeRepository userIdentificationtypeRepository) {
+        this.userIdentificationtypeRepository = userIdentificationtypeRepository;
+    }
 
     @Override
     public List<UserIdentificationtype> getAll() {

@@ -18,10 +18,11 @@ import java.util.Optional;
  */
 @Service
 public class UserIdentificationHistoryServiceImpl implements UserIdentificationHistoryService {
+
     private UserIdentificationHistoryRepository userIdentificationHistoryRepository;
 
     @Autowired
-    public UserIdentificationHistoryServiceImpl(BusRepository busRepository) {
+    public UserIdentificationHistoryServiceImpl(UserIdentificationHistoryRepository userIdentificationHistoryRepository) {
         this.userIdentificationHistoryRepository = userIdentificationHistoryRepository;
     }
 
