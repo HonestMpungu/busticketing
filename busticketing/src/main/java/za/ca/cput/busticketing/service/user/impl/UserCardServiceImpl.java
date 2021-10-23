@@ -18,7 +18,7 @@ import java.util.Optional;
  */
 @Service
 public class UserCardServiceImpl implements UserCardService {
-    private UserCardRepository userCardRepository;
+    private UserCardRepository  userCardRepository;
 
     @Autowired
     public UserCardServiceImpl(UserCardRepository userCardRepository) {
