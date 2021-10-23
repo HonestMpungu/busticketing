@@ -3,10 +3,9 @@ package za.ca.cput.busticketing.entity.bus;
 import javax.persistence.*;
 
 /*
-Capacity.java
-Entity for buscapacity
+
 Author : Asanda Mabaso - 205049990
-Date : 27 June 2021
+
  */
 @Entity
 public class BusCapacity {
