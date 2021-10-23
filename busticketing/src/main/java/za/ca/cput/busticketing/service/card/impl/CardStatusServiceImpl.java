@@ -6,6 +6,7 @@ import za.ca.cput.busticketing.entity.card.Card;
 import za.ca.cput.busticketing.entity.card.CardStatus;
 import za.ca.cput.busticketing.repository.card.CardRepository;
 import za.ca.cput.busticketing.repository.card.CardStatusRepository;
+import za.ca.cput.busticketing.repository.user.UserIdentificationRepository;
 import za.ca.cput.busticketing.service.card.CardStatusService;
 
 import java.util.ArrayList;
@@ -20,9 +21,11 @@ import java.util.Optional;
 @Service
 public class CardStatusServiceImpl implements CardStatusService {
 
-    @Autowired
     private CardStatusRepository cardStatusRepository;
-
+    @Autowired
+    public CardStatusServiceImpl(CardStatusRepository cardStatusRepository) {
+        this.cardStatusRepository = cardStatusRepository;
+    }
     @Override
     public List<CardStatus> getAllCardStatus()
     {

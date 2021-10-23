@@ -12,7 +12,6 @@ import java.util.Date;
 public class UserIdentificationtype {
 
     @Id
-    @Column(name="card_id")
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     private String cardColor;

@@ -21,7 +21,7 @@ public class UserCardServiceImpl implements UserCardService {
     private UserCardRepository userCardRepository;
 
     @Autowired
-    public UserCardServiceImpl(UserCardRepository busRepository) {
+    public UserCardServiceImpl(UserCardRepository userCardRepository) {
         this.userCardRepository = userCardRepository;
     }
 

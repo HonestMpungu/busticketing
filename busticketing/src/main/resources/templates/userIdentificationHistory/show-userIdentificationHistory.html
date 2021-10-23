@@ -18,12 +18,12 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="cap : ${listOfUserIdentificationHistory}">
-			<td th:text="${cap.id}"></td>
-			<td th:text="${cap.name}"></td>
-			<td th:text="${cap.description}"></td>
-			<td><a th:href="@{/userIdentificationHistory/updateform/{id}(id=${cap.id})}">Edit</a></td>
-			<td><a th:href="@{/userIdentificationHistory/delete/{id}(id=${cap.id})}">Delete</a></td>
+		<tr th:each="ccap : ${listOfUserIdentificationHistory}">
+			<td th:text="${ccap.id}"></td>
+			<td th:text="${ccap.name}"></td>
+			<td th:text="${ccap.description}"></td>
+			<td><a th:href="@{/userIdentificationHistory/updateform/{id}(id=${ccap.id})}">Edit</a></td>
+			<td><a th:href="@{/userIdentificationHistory/delete/{id}(id=${ccap.id})}">Delete</a></td>
 		</tr>
 
 		</tbody>

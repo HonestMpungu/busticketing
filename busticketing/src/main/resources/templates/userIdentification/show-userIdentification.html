@@ -11,18 +11,18 @@
 		<thead>
 		<tr>
 
-			<th> Route Name</th>
-			<th> Route Description</th>
+			<th>  Name</th>
+			<th>  Description</th>
 			<th> Edit</th>
 			<th> Delete</th>
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="userIdentification : ${listOfUsers}">
-			<td th:text="${userIdentification.id}"></td>
-			<td th:text="${userIdentification.description}"></td>
-			<td><a th:href="@{/userIdentification/updateform/{id}(id=${userIdentification.id})}">Edit</a></td>
-			<td><a th:href="@{/userIdentification/delete/{id}(id=${userIdentification.id})}">Delete</a></td>
+		<tr th:each="ucap : ${listOfUsers}">
+			<td th:text="${ucap.id}"></td>
+			<td th:text="${ucap.description}"></td>
+			<td><a th:href="@{/userIdentification/updateform/{id}(id=${ucap.id})}">Edit</a></td>
+			<td><a th:href="@{/userIdentification/delete/{id}(id=${ucap.id})}">Delete</a></td>
 		</tr>
 		</tbody>
 	</table>

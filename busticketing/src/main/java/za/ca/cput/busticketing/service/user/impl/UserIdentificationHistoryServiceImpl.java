@@ -22,7 +22,7 @@ public class UserIdentificationHistoryServiceImpl implements UserIdentificationH
     private UserIdentificationHistoryRepository userIdentificationHistoryRepository;
 
     @Autowired
-    public UserIdentificationHistoryServiceImpl(BusRepository busRepository) {
+    public UserIdentificationHistoryServiceImpl(UserIdentificationHistoryRepository userIdentificationHistoryRepository) {
         this.userIdentificationHistoryRepository = userIdentificationHistoryRepository;
     }
 

@@ -9,7 +9,6 @@ Author : Asanda Mabaso - 205049990
 Date : 27 June 2021
  */
 @Entity
-@Table(name="bus_capacity")
 public class BusCapacity {
 
     @Id

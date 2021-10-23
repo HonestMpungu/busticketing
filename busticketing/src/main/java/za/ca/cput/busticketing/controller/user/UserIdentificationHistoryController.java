@@ -1,6 +1,7 @@
 package za.ca.cput.busticketing.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ import java.util.Optional;
  *23/09/2021
  */
 
-@RestController
-@RequestMapping("/userIdentificationHistory")
+@Controller
+@RequestMapping(path="/userIdentificationHistory")
 public class UserIdentificationHistoryController {
 
     @Autowired

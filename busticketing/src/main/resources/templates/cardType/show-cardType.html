@@ -18,12 +18,12 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="cardType : ${listOfCards}">
-			<td th:text="${cardType.id}"></td>
-			<td th:text="${cardType.name}"></td>
-			<td th:text="${cardType.description}"></td>
-			<td><a th:href="@{/cardType/updateform/{id}(id=${cardType.id})}">Edit</a></td>
-			<td><a th:href="@{/cardType/delete/{id}(id=${cardType.id})}">Delete</a></td>
+		<tr th:each="vcap : ${listOfCards}">
+			<td th:text="${vcap.id}"></td>
+			<td th:text="${vcap.name}"></td>
+			<td th:text="${vcap.description}"></td>
+			<td><a th:href="@{/cardType/updateform/{id}(id=${vcap.id})}">Edit</a></td>
+			<td><a th:href="@{/cardType/delete/{id}(id=${vcap.id})}">Delete</a></td>
 		</tr>
 		</tbody>
 	</table>

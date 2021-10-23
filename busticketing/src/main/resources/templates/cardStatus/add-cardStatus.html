@@ -9,11 +9,11 @@
 <br>
 <hr>
 
-<form th:action="@{/route/save}" th:object="${route}" method="post">
+<form th:action="@{/cardStatus/save}" th:object="${cardStatus}" method="post">
 	<table>
 		<tr><td> Name : </td><td><input type="text" th:field="*{name}"/></td></tr>
 		<tr><td> Description : </td><td> <input type="text" th:field="*{description}"/></td></tr>
-		<tr><td> </td><td> <input type="submit" value="Add New Route"/></td></tr>
+		<tr><td> </td><td> <input type="submit" value="Add New cardStatus"/></td></tr>
 	</table>
 </form>
 </body>

@@ -2,34 +2,33 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Routes Management Page</title>
+	<title>Status Management Page</title>
 </head>
 <body th:style="'background: url(/img/metro-bus-route.jpg) no-repeat center center fixed;'">
 <div align="center">
-	<h1> Routes List</h1>
+	<h1> Card Status List</h1>
 	<table border="1">
 		<thead>
 		<tr>
-			<th> Route Number</th>
-			<th> Route Name</th>
-			<th> Route Description</th>
+			<th>  Name</th>
+			<th>  Description</th>
 			<th> Edit</th>
 			<th> Delete</th>
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="route : ${listOfRoutes}">
-			<td th:text="${route.id}"></td>
-			<td th:text="${route.name}"></td>
-			<td th:text="${route.description}"></td>
-			<td><a th:href="@{/route/updateform/{id}(id=${route.id})}">Edit</a></td>
-			<td><a th:href="@{/route/delete/{id}(id=${route.id})}">Delete</a></td>
+		<tr th:each="tcap : ${listOfCardStatus}">
+			<td th:text="${tcap.id}"></td>
+			<td th:text="${tcap.name}"></td>
+			<td th:text="${tcap.description}"></td>
+			<td><a th:href="@{/cardStatus/updateform/{id}(id=${tcap.id})}">Edit</a></td>
+			<td><a th:href="@{/cardStatus/delete/{id}(id=${tcap.id})}">Delete</a></td>
 		</tr>
 		</tbody>
 	</table>
 </div>
 <div align="center">
-	<a th:href="@{/route/form}"><h4> Add New Details</h4></a>
+	<a th:href="@{/cardStatus/form}"><h4> Add New Details</h4></a>
 </div>
 </body>
 </html>

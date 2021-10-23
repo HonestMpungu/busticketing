@@ -1,10 +1,8 @@
 package za.ca.cput.busticketing;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import static org.springframework.boot.SpringApplication.*;
 
 @SpringBootApplication
 public class BusticketingApplication {
