@@ -42,7 +42,56 @@ public class UserCard {
         this.description = description;
     }
 
+    protected UserCard(){
 
+    }
+
+    private UserCard(Builder builder) {
+        this.name= builder.name;
+       this.description = builder.description;
+    }
+
+    //remove getters please.
+
+    public static class Builder {
+        private Integer id;
+        private String name;
+        private String description;
+
+        public Builder setId(Integer id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder copy(UserCard userCard) {
+
+            return this;
+        }
+
+        public UserCard build() {
+            return new UserCard(this);
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "UserCard{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 //    @Id
 //    private Integer id;
 //    @JoinColumn(name = "user_id")
