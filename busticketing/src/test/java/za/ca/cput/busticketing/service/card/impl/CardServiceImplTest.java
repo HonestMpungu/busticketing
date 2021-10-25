@@ -19,16 +19,13 @@ class CardServiceImplTest {
 
     private CardService service;
     private Card card;
-
-    /*
+    
     @BeforeEach void setup() {
         assertNotNull(repository);
-        this.card = AuthorFactory.build("Denzel", "Washington");
-        service = new AuthorServiceImpl(repository);
+        //this.card = CardFactory.build("Denzel", "Washington");
+       // service = new CardServiceImpl(repository);
+
     }
-
-     */
-
     @Test
     void getAllCards() {
     }

@@ -13,33 +13,74 @@ import javax.persistence.Id;
 @Entity
 public class CardType {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String description;
 
-    public Integer getId() { return id; }
+    public Integer getId() {
+        return id;
+    }
 
-    public void setId( Integer id ) { this.id = id; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName( String name )
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription( String description )
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
+    protected CardType() {
+
+    }
+
+    private CardType(CardType.Builder builder) {
+        this.name = builder.name;
+        this.description = builder.description;
+    }
+
+    //remove getters please.
+
+    public static class Builder {
+        private Integer id;
+        private String name;
+        private String description;
+
+        public CardType.Builder setId(Integer id) {
+            this.id = id;
+            return this;
+        }
+
+        public CardType.Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public CardType.Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public CardType.Builder copy(CardType cardType) {
+
+            return this;
+        }
+
+        public CardType build() {
+            return new CardType(this);
+        }
+
+    }
 }
