@@ -12,7 +12,7 @@ import za.ca.cput.busticketing.entity.user.User;
 
 public class UserFactory {
 
-    public static User create(String firstname, String lastname, String phone, String email, String password) {
+    public static User build(String firstname, String lastname, String phone, String email, String password) {
         return new User.Builder()
                 .setFirstname(firstname)
                 .setLastname(lastname)
@@ -21,4 +21,5 @@ public class UserFactory {
                 .setPassword(password)
                 .build();
     }
+
 }
