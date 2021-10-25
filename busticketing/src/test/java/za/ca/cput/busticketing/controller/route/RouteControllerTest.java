@@ -10,14 +10,16 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import za.ca.cput.busticketing.entity.route.BusStop;
-import static org.junit.jupiter.api.Assertions.*;
+import za.ca.cput.busticketing.entity.route.Route;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class BusStopControllerTest {
-    private static BusStop busStop = BusStop.create("Cape Town");
+class RouteControllerTest {
+    private static Route route = Route.create("Cape Town");
 
 
 
@@ -28,41 +30,41 @@ class BusStopControllerTest {
     @Test
     void a_create() {
         String url = baseURL + "/create";
-        ResponseEntity<BusStop> postResponse = restTemplate.postForEntity(url, busStop, BusStop.class);
+        ResponseEntity<Route> postResponse = restTemplate.postForEntity(url, route, Route.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
-        busStop = postResponse.getBody();
-        System.out.println("Created data: " +busStop);
-        assertEquals(busStop.getId(), postResponse.getBody().getId());
+        route = postResponse.getBody();
+        System.out.println("Created data: " +route);
+        assertEquals(route.getId(), postResponse.getBody().getId());
 
     }
 
     @Test
     void b_read() {
-        String url = baseURL + "read" + busStop.getId();
-        System.out.println("BusRoute Read URL:  " + url);
-        ResponseEntity<BusStop> busStopResponseEntity = restTemplate.getForEntity(url, BusStop.class);
-        assertNotNull(busStopResponseEntity);
-        assertNotNull(busStopResponseEntity.getBody());
+        String url = baseURL + "read" + route.getId();
+        System.out.println("Route Read URL:  " + url);
+        ResponseEntity<Route> routeResponseEntity = restTemplate.getForEntity(url, Route.class);
+        assertNotNull(routeResponseEntity);
+        assertNotNull(routeResponseEntity.getBody());
     }
 
 
     @Test
     void update() {
-        BusStop.Builder busStopBuilder = new BusStop.Builder();
-        busStopBuilder.copy(busStop).setDescription("Cape Town");
-        BusStop updated  = busStopBuilder.build();
+        Route.Builder routeBuilder = new Route.Builder();
+        routeBuilder.copy(route).setDescription("Cape Town");
+        Route updated  = routeBuilder.build();
         String url = baseURL + "/update";
-        System.out.println("busStop Update URL:  " + url);
-        System.out.println("Updated busStop Name: " + updated);
-        ResponseEntity<BusStop> response = restTemplate.postForEntity(url, updated, BusStop.class);
+        System.out.println("route Update URL:  " + url);
+        System.out.println("Updated route Name: " + updated);
+        ResponseEntity<Route> response = restTemplate.postForEntity(url, updated, Route.class);
         assertNotNull(response.getBody());
     }
 
     @Test
     void e_delete() {
-        String url = baseURL+ "/delete/" + busStop.getId();
-        System.out.println("busStop URL: " + url);
+        String url = baseURL+ "/delete/" + route.getId();
+        System.out.println("route URL: " + url);
         restTemplate.delete(url);
     }
 
@@ -79,3 +81,4 @@ class BusStopControllerTest {
 
     }
 }
+
