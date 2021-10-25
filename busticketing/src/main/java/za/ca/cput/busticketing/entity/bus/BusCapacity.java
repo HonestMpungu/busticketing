@@ -1,5 +1,7 @@
 package za.ca.cput.busticketing.entity.bus;
 
+
+
 import javax.persistence.*;
 
 /*
@@ -40,4 +42,47 @@ public class BusCapacity {
         this.description = description;
     }
 
+
+
+    protected BusCapacity(){
+
+    }
+
+    private BusCapacity(BusCapacity.Builder builder) {
+        this.name= builder.name;
+        this.description = builder.description;
+    }
+
+    //remove getters please.
+
+    public static class Builder {
+        private String id;
+        private String name;
+        private String description;
+
+        public BusCapacity.Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public BusCapacity.Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public BusCapacity.Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public BusCapacity.Builder copy(BusCapacity BusCapacity) {
+
+            return this;
+        }
+
+        public BusCapacity build() {
+            return new BusCapacity(this);
+        }
+
+    }
 }
