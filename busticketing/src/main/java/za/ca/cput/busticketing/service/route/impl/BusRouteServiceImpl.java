@@ -24,6 +24,9 @@ public class BusRouteServiceImpl implements BusRouteService {
         this.busRouteRepository = busRouteRepository;
     }
 
+    public static void getService() {
+    }
+
 
     @Override
     public List<BusRoute> getAllBusRoutes()

@@ -1,6 +1,7 @@
 package za.ca.cput.busticketing.controller.card;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +15,11 @@ import java.util.Optional;
  * @author Honest Mpungu
  * Student No:215072081
  * Group:Part Time
+ * 20/10/2021
  */
-@RestController
-@RequestMapping("/cardType")
+
+@Controller
+@RequestMapping(path="/cardType")
 public class CardTypeController {
 
 

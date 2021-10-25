@@ -19,13 +19,13 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="card : ${listOfCards}">
-			<td th:text="${userIdentificationtype.id}"></td>
-			<td th:text="${userIdentificationtype.issueDate}"></td>
-			<td th:text="${userIdentificationtype.cardColor}"></td>
-			<td th:text="${userIdentificationtype.balance}"></td>
-			<td><a th:href="@{/userIdentificationtype/updateform/{id}(id=${userIdentificationtype.id})}">Edit</a></td>
-			<td><a th:href="@{/userIdentificationtype/delete/{id}(id=${userIdentificationtype.id})}">Delete</a></td>
+		<tr th:each="acap : ${listOfCards}">
+			<td th:text="${acap.id}"></td>
+			<td th:text="${acap.issueDate}"></td>
+			<td th:text="${acap.cardColor}"></td>
+			<td th:text="${acap.balance}"></td>
+			<td><a th:href="@{/userIdentificationtype/updateform/{id}(id=${acap.id})}">Edit</a></td>
+			<td><a th:href="@{/userIdentificationtype/delete/{id}(id=${acap.id})}">Delete</a></td>
 		</tr>
 		</tbody>
 	</table>

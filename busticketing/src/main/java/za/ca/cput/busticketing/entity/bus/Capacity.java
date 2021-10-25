@@ -5,10 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 /*
-Capacity.java
-Entity for capacity
+
 Author : Asanda Mabaso - 205049990
-Date : 27 June 2021
+
  */
 @Entity
 public class Capacity {
@@ -43,4 +42,47 @@ public class Capacity {
         this.description = description;
     }
 
+
+
+    protected Capacity(){
+
+    }
+
+    private Capacity(Capacity.Builder builder) {
+        this.name= builder.name;
+        this.description = builder.description;
+    }
+
+    //remove getters please.
+
+    public static class Builder {
+        private String id;
+        private String name;
+        private String description;
+
+        public Capacity.Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Capacity.Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Capacity.Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Capacity.Builder copy(Capacity Capacity) {
+
+            return this;
+        }
+
+        public Capacity build() {
+            return new Capacity(this);
+        }
+
+    }
 }

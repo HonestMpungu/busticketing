@@ -1,6 +1,7 @@
 package za.ca.cput.busticketing.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +15,11 @@ import java.util.Optional;
 /**
  * @author anongxa
  * Student No:204513723
- *
+ *23/09/2021
  */
 
-@RestController
-@RequestMapping("/userIdentificationtype")
+@Controller
+@RequestMapping(path="/userIdentificationtype")
 public class UserIdentificationtypeController {
     @Autowired
     private UserIdentificationtypeService userIdentificationtypeService;
@@ -26,9 +27,9 @@ public class UserIdentificationtypeController {
     //display the list of UserIdentificationtypes
     @GetMapping(path="/all")
     public String viewUserIdentificationtypePage( Model model){
-        List<UserIdentificationtype> listUserIdentificationtypes = userIdentificationtypeService.getAll();
-        model.addAttribute( "listOfUserIdentificationtype" , listUserIdentificationtypes);
-        return "userIdentificationtype/show-userIdentificationtypes";
+        List<UserIdentificationtype> listUserIdentificationtype = userIdentificationtypeService.getAll();
+        model.addAttribute( "listOfUserIdentificationtype" , listUserIdentificationtype);
+        return "userIdentificationtype/show-userIdentificationtype";
     }
 
     @PostMapping("/save")

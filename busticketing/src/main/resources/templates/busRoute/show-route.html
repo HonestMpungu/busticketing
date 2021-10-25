@@ -6,7 +6,7 @@
 </head>
 <body th:style="'background: url(/img/metro-bus-route.jpg) no-repeat center center fixed;'">
 <div align="center">
-	<h1> Routes List</h1>
+	<h1> Bus Routes List</h1>
 	<table border="1">
 		<thead>
 		<tr>
@@ -18,18 +18,18 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="route : ${listOfRoutes}">
-			<td th:text="${route.id}"></td>
-			<td th:text="${route.name}"></td>
-			<td th:text="${route.description}"></td>
-			<td><a th:href="@{/route/updateform/{id}(id=${route.id})}">Edit</a></td>
-			<td><a th:href="@{/route/delete/{id}(id=${route.id})}">Delete</a></td>
+		<tr th:each="rte : ${listOfRoutes}">
+			<td th:text="${rte.id}"></td>
+			<td th:text="${rte.name}"></td>
+			<td th:text="${rte.description}"></td>
+			<td><a th:href="@{/busRoute/updateform/{id}(id=${rte.id})}">Edit</a></td>
+			<td><a th:href="@{/busRoute/delete/{id}(id=${rte.id})}">Delete</a></td>
 		</tr>
 		</tbody>
 	</table>
 </div>
 <div align="center">
-	<a th:href="@{/route/form}"><h4> Add New Details</h4></a>
+	<a th:href="@{/busRoute/form}"><h4> Add New Details</h4></a>
 </div>
 </body>
 </html>

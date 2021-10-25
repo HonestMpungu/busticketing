@@ -1,5 +1,9 @@
 package za.ca.cput.busticketing.service.bus.impl;
+/*
 
+Author : Asanda Mabaso - 205049990
+
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ca.cput.busticketing.entity.bus.Capacity;
@@ -9,10 +13,7 @@ import za.ca.cput.busticketing.service.bus.CapacityService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-/*
-Author: Asanda Mabaso 205049990
-Date: 30 July 2021
- */
+
 
 @Service
 public class CapacityServiceImpl implements CapacityService {

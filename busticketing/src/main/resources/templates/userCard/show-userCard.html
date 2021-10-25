@@ -18,19 +18,19 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr th:each="userCard : ${listOfUserCard}">
-			<td th:text="${userCard.id}"></td>
-			<td th:text="${userCard.name}"></td>
-			<td th:text="${userCard.description}"></td>
-			<td><a th:href="@{/userCard/updateform/{id}(id=${userCard.id})}">Edit</a></td>
-			<td><a th:href="@{/userCard/delete/{id}(id=${userCard.id})}">Delete</a></td>
+		<tr th:each="dcap : ${listOfUserCard}">
+			<td th:text="${dcap.id}"></td>
+			<td th:text="${dcap.name}"></td>
+			<td th:text="${dcap.description}"></td>
+			<td><a th:href="@{/userCard/updateform/{id}(id=${dcap.id})}">Edit</a></td>
+			<td><a th:href="@{/userCard/delete/{id}(id=${dcap.id})}">Delete</a></td>
 		</tr>
 
 		</tbody>
 	</table>
 </div>
 	<div align="center">
-		<a th:href="@{/bus/form}"><h4> Add New Details</h4></a>
+		<a th:href="@{/userCard/form}"><h4> Add New Details</h4></a>
 	</div>
 
 </body>

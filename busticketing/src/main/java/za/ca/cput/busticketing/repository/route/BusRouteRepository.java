@@ -2,6 +2,7 @@ package za.ca.cput.busticketing.repository.route;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import za.ca.cput.busticketing.entity.bus.BusCapacity;
 import za.ca.cput.busticketing.entity.route.BusRoute;
 /*
  * Author: Sanele Ngwenya
@@ -10,5 +11,5 @@ import za.ca.cput.busticketing.entity.route.BusRoute;
  */
 
 @Repository
-public interface BusRouteRepository extends CrudRepository<BusRoute, Integer> {
+public interface BusRouteRepository  extends CrudRepository<BusRoute, Integer> {
 }
