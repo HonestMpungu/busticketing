@@ -18,6 +18,10 @@ public class BusStop {
     private String name;
     private String description;
 
+    public static BusStop create(String cape_town) {
+        return null;
+    }
+
     public Integer getId() { return id; }
 
     public void setId( Integer id ) { this.id = id; }
@@ -40,6 +44,46 @@ public class BusStop {
     public void setDescription( String description )
     {
         this.description = description;
+    }
+
+    protected BusStop (){
+
+    }
+
+    private BusStop (BusStop .Builder builder) {
+        this.name= builder.name;
+        this.description = builder.description;
+    }
+
+
+    public static class Builder {
+        private String id;
+        private String name;
+        private String description;
+
+        public BusStop.Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public BusStop.Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public BusStop.Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public BusStop.Builder copy(BusStop BusStop) {
+
+            return this;
+        }
+
+        public BusStop build() {
+            return new BusStop(this);
+        }
     }
 
 }

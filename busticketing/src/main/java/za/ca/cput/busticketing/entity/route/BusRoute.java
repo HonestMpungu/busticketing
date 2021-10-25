@@ -18,6 +18,10 @@ public class BusRoute {
     private String name;
     private String description;
 
+    public static BusRoute create(String cape_town) {
+        return null;
+    }
+
     public Integer getId() { return id; }
 
     public void setId( Integer id ) { this.id = id; }
@@ -40,6 +44,47 @@ public class BusRoute {
     public void setDescription( String description )
     {
         this.description = description;
+    }
+
+    protected BusRoute(){
+
+    }
+
+    private BusRoute(BusRoute.Builder builder) {
+        this.name= builder.name;
+        this.description = builder.description;
+    }
+
+
+    public static class Builder {
+        private String id;
+        private String name;
+        private String description;
+
+        public BusRoute.Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public BusRoute.Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public BusRoute.Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public BusRoute.Builder copy(BusRoute BusRoute) {
+
+            return this;
+        }
+
+        public BusRoute build() {
+            return new BusRoute(this);
+        }
+
     }
 
 }
