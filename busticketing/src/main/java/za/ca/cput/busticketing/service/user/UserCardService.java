@@ -12,7 +12,7 @@ import java.util.Optional;
  * UserCardService class
  */
 public interface UserCardService {
-    List<UserCard> getAllUserCards();
+     List<UserCard> getAll();
 
     Optional<UserCard> getByID(Integer id);
 

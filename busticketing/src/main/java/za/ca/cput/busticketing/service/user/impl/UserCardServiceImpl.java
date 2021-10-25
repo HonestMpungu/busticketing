@@ -19,19 +19,20 @@ import java.util.Optional;
 
 @Service
 public class UserCardServiceImpl implements UserCardService {
+
     private UserCardRepository userCardRepository;
 
     @Autowired
     public UserCardServiceImpl(UserCardRepository userCardRepository) {
+
         this.userCardRepository = userCardRepository;
     }
 
     @Override
-    public List<UserCard> getAllUserCards()
-    {
+    public List<UserCard> getAll() {
         List<UserCard> userCards = new ArrayList<UserCard>();
         userCardRepository.findAll().forEach(userCards::add);
-        return userCards;
+       return userCards;
     }
 
     @Override

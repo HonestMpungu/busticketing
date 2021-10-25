@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import za.ca.cput.busticketing.entity.card.CardStatus;
+import za.ca.cput.busticketing.entity.card.CardStatus;;
 import za.ca.cput.busticketing.service.card.CardStatusService;
 
 import java.util.List;
@@ -34,7 +34,7 @@ public class CardStatusController {
 	}
 
 	@PostMapping("/save")
-	public String addCardStatus(CardStatus cardStatus, BindingResult result, Model model) {
+	public String addcardStatus(CardStatus cardStatus, BindingResult result, Model model) {
 		cardStatusService.save(cardStatus);
 		return "redirect:/cardStatus/all";
 	}
@@ -42,13 +42,13 @@ public class CardStatusController {
 	//form to be called first when wanting to add a new cardStatus
 	@GetMapping("/form")
 	public String displayAddCardStatusForm(CardStatus cardStatus) {
-		return "card/add-cardStatus";
+		return "cardStatus/add-cardStatus";
 	}
 
 	@GetMapping("/updateform/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-		Optional<CardStatus> cardStatus = cardStatusService.getByID(id);
-		model.addAttribute("cardStatus", cardStatus.orElse( null ));
+		Optional<CardStatus> capacity = cardStatusService.getByID(id);
+		model.addAttribute("cardStatus", capacity.orElse( null ));
 		return "cardStatus/update-cardStatus";
 	}
 
@@ -60,11 +60,12 @@ public class CardStatusController {
 	}
 
 	@GetMapping("/delete/{id}")
-	public String deleteCardStatus(@PathVariable("id") Integer id, Model model) {
+	public String deleteCapacity(@PathVariable("id") Integer id, Model model) {
 		Optional<CardStatus> cardStatus = cardStatusService.getByID( id );
 		if(cardStatus.isPresent())
 			cardStatusService.delete(cardStatus.get().getId());
 		return "redirect:/cardStatus/all";
 	}
+
 
 }
