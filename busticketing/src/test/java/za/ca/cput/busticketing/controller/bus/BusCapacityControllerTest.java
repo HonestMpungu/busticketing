@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
-import za.ca.cput.busticketing.entity.bus.Bus;
-import za.ca.cput.busticketing.factory.busfactory.BusFactory;
+import za.ca.cput.busticketing.entity.bus.BusCapacity;
+import za.ca.cput.busticketing.factory.busfactory.BusCapacityFactory;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -16,40 +17,39 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 
-class BusControllerTest {
+class BusCapacityControllerTest {
 
-    private static  Bus bus = new BusFactory().create("MecerBus", "book");
+    private static BusCapacity busCapacity = new BusCapacityFactory().create("Translux", "Available Seats");
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private final String BASE_URL = "http://localhost:8080/bus";
+    private final String BASE_URL = "http://localhost:8080/busCapacity";
     public static String SECURITY_USERNAME= "admin";
     public static String SECURITY_PASSWORD= "BusTicketing";
 
+
     @Test
     void showUpdateForm() {
-        String url = BASE_URL + "read/" + bus.getId();
+        String url = BASE_URL + "read/" + busCapacity.getId();
         System.out.println("URL: " + url);
-        ResponseEntity<Bus> response = restTemplate.withBasicAuth("admin","BusTicketing").getForEntity(url, Bus.class);
+        ResponseEntity<BusCapacity> response = restTemplate.withBasicAuth("admin","BusTicketing").getForEntity(url,BusCapacity.class);
         assertEquals(response.getBody().getId(),response.getBody().getId());
     }
 
     @Test
-    void updateBus() {
-        Bus updated = new Bus.Builder().copy(bus).setDescription("book").build();
+    void updateCapacity() {
+        BusCapacity updated = new BusCapacity.Builder().copy(busCapacity).setDescription("book").build();
         String url = BASE_URL + "/update";
         System.out.println("URL: " + url);
         System.out.println("Post data:" + updated);
-        ResponseEntity<Bus> response = restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).postForEntity(url, updated, Bus.class);
+        ResponseEntity<BusCapacity> response = restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).postForEntity(url, updated, BusCapacity.class);
         assertNotNull(response.getBody());
     }
 
     @Test
-    void deleteBus() {
-        String url = BASE_URL +"/delete/" + bus.getId();
+    void deleteCapacity() {
+        String url = BASE_URL +"/delete/" + busCapacity.getId();
         System.out.println("URL:" + url);
         restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).delete(url);
-
-
     }
 }
