@@ -1,11 +1,5 @@
 package za.ca.cput.busticketing.controller.user;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import za.ca.cput.busticketing.entity.user.UserIdentificationtype;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * @author anongxa
  * Student No:204513723
@@ -15,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 
-public class UserIdentificationtypeControllerTest {
+public class UserIdentificationHistoryControllerTest {
 
-    private  static UserIdentificationtype userIdentificationtype = UserIdentificationtypeFactory.create("Yellow Card","  Honest");
+    private  static UserIdentificationHistory userIdentificationHistory = UserIdentificationHistoryFactory.create("Yellow Card","  Honest");
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -29,41 +23,41 @@ public class UserIdentificationtypeControllerTest {
     void create() {
 
         String url = BASE_URL +"/";
-        ResponseEntity<UserIdentificationtype> postResponse = restTemplate
+        ResponseEntity<UserIdentificationHistory> postResponse = restTemplate
                 .withBasicAuth("Super","Pass")
-                .postForEntity(url,userIdentificationtype,UserIdentificationtype.class);
+                .postForEntity(url,userIdentificationHistory,UserIdentificationHistory.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         cardType = postResponse.getBody();
-        System.out.println("Saved data: " + userIdentificationtype);
-        assertEquals(userIdentificationtypegetId(),postResponse.getBody().getId());
+        System.out.println("Saved data: " + UserIdentificationHistory);
+        assertEquals(UserIdentificationHistory.getId(),postResponse.getBody().getId());
     }
 
     @Test
     void read() {
-        String url = BASE_URL + "/" + userIdentificationtype.getId();
+        String url = BASE_URL + "/" + userIdentificationHistory.getId();
         System.out.println(" URL:" + url);
-        ResponseEntity<UserIdentificationtype> response = restTemplate
+        ResponseEntity<UserIdentificationHistory> response = restTemplate
                 .withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD)
-                .getForEntity(url,UserIdentificationtype.class);
+                .getForEntity(url,UserIdentificationHistory.class);
         assertNotNull(response.getBody());
     }
 
     @Test
     void update() {
-        UserIdentificationtype updated =new UserIdentificationtype.Builder().copy(userIdentificationtype).setDescription("315").build();
+        UserIdentificationHistory updated =new UserIdentificationHistory.Builder().copy(userIdentificationHistory).setDescription("315").build();
         String url = BASE_URL + "/update";
         System.out.println("URL:"+url);
         System.out.println("Post data:"+ updated);
         ResponseEntity<CardType> response = restTemplate
                 .withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD)
-                .postForEntity(url,updated,UserIdentificationtype.class);
+                .postForEntity(url,updated,UserIdentificationHistory.class);
         assertNotNull(response.getBody());
     }
 
     @Test
     void delete() {
-        String url = BASE_URL + "/delete" +userIdentificationtype.getId();
+        String url = BASE_URL + "/delete" +userIdentificationHistory.getId();
         System.out.println("URL:" +url);
         restTemplate.delete(url);
     }
@@ -81,4 +75,5 @@ public class UserIdentificationtypeControllerTest {
         System.out.println(response);
         System.out.println(response.getBody());
     }
+
 }
